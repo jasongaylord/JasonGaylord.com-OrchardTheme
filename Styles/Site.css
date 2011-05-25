@@ -1,0 +1,133 @@
+﻿/*
+Theme: JasonGaylord.com
+Author: Jason N. Gaylord
+Copyright: 2010
+*/
+
+/* Colors Palette
+Background: #fff
+Text: #434343
+Main Accent: #999
+Links: #443444
+*/
+
+/* Reset
+***************************************************************/
+YOUR CSS RESET CODE GOES HERE
+
+/* Clearing Float
+***************************************************************/
+group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.group {display: inline-block;}  /* for IE/Mac */
+
+
+/* Default font settings. 
+The font-size 93.8% sets the base font to 15px 
+
+Pixels     EMs         Percent Points
+6px     0.462em     46.2%     5pt
+7px     0.538em     53.8%     5pt
+8px     0.615em     61.5%     6pt
+9px     0.692em     69.2%     7pt
+10px     0.769em     76.9%     8pt
+11px     0.846em     84.6%     8pt
+12px     0.923em     92.3%     9pt
+13px     1em         100%     10pt
+14px     1.077em     107.7%     11pt
+15px     1.154em     115.4%     11pt
+16px     1.231em     123.1%     12pt
+17px     1.308em     130.8%     13pt
+18px     1.385em     138.5%     14pt
+19px     1.462em     146.2%     14pt
+20px     1.538em     153.8%     15pt
+21px     1.615em     161.5%     16pt
+22px     1.692em     169.2%     17pt
+23px     1.769em     176.9%     17pt
+24px     1.846em     184.6%     18pt
+*/
+
+/* General
+***************************************************************/
+body { margin: 0px; font-size: 93.8%; font-family: 'Segoe UI', Calibri, Tahoma, Helvetica, Serif; }
+
+/* a {}
+a:link {}
+a:hover{}
+a:visited{} */
+
+/* Headings */
+h1 { font: 1.8em Georgia, Serif bold; margin: 5px 0 5px 0; }
+h2 { font: 1.6em Georgia, Serif bold; margin: 5px 0 5px 0; }
+
+/* Lists */
+/*ol, ul      { list-style: none; }
+li ul, 
+li ol       { margin:0 1.5em; }
+ul, ol      { margin: 1.5em; line-height: 1.538em; }
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;} */
+
+/* Structure
+***************************************************************/
+#s_header { height: 141px; background: #4067aa; }
+    #s_header_container { margin: 0 auto 0 auto; width: 960px; background: url('img/s_header_clouds.png') no-repeat bottom; height: 141px; }
+        #s_header_logo { float: left; width: 410px; background: url('img/s_header_left.png') no-repeat; min-height: 120px; }
+        #s_navigation { float: right; width: 540px; padding: 5px 0 0 5px; text-align: right; }        
+            #twitter_icon { border: 0px; z-index: 10; margin-left: 220px; top: 22px; position: absolute; }
+            #s_navigation ul { padding: 0px; margin: 0px; }
+            #s_navigation ul li { display:block; float: right; margin:0 2px -1px 0; }
+            #s_navigation ul li.current { border: 1px solid #6a8bc0; }
+            #s_navigation ul a  { padding:0 18px; display:block; float:right; color: #bfd4e9; font-size: 1.077em; text-decoration:none; line-height:24px; }
+
+#s_body { background: url('img/s_body_background.jpg') white repeat-x; }
+	#s_body_container { margin: 0 auto 0 auto; width: 960px; }
+    	#s_body_column1 { width: 620px; padding: 20px 0 20px 0; }	
+	        #s_body_page_left { background: url('img/s_body_page_left.png') no-repeat; width: 10px; height: 170px; float: left; }
+	        #s_body_page { background: #e2e9f1 url('img/s_body_page_gradient.gif') repeat-x; border: 1px #5e799b solid; width: 578px; min-height: 500px; padding: 10px; margin: 0 auto 0 auto; }
+	        #s_body_page_right { background: url('img/s_body_page_right.png') no-repeat; width: 10px; height: 170px; float: right; top: 0px; }
+    	#s_body_column2 { width: 320px; float: right; }
+	        #s_body_weather_stamp { min-height: 200px; background: url('img/weather/lightning.png') no-repeat; }
+	    #s_body_bigcolumn { padding: 20px 0 20px 0; }
+	        #s_body_page_bigcolumn_left { background: url('img/s_body_page_left.png') no-repeat; width: 10px; height: 170px; float: left; }
+	        #s_body_page_bigcolumn { background: #e2e9f1 url('img/s_body_page_gradient.gif') repeat-x; border: 1px #5e799b solid; width: 918px; min-height: 500px; padding: 10px; margin: 0 auto 0 auto; }
+	        #s_body_page_bigcolumn_right { background: url('img/s_body_page_right.png') no-repeat; width: 10px; height: 170px; float: right; top: 0px; }	        
+	
+#s_footer { min-height: 120px; background: #021523; padding: 12px 0 0 0; } /* 021523 */
+	#s_footer_decor { height: 6px; background: #234b6f; border-bottom: 1px inset #4e7ba3; border-top: 1px outset #4e7ba3; } /* 1a313f */
+	#s_footer_container { padding: 12px; margin: 0 auto 0 auto; width: 960px; color: #6c9cc7; display: block; } /* d1dbe5 */
+	    #s_footer_container a { color: #8cccf7; } /* 8cccf7 */
+	    .zone-footer-quad-first { width: 300px; padding: 10px; float: left; position: relative; }
+	    .zone-footer-quad-second { width: 300px; padding: 10px; margin: 0 auto 0 auto; }
+	    .zone-footer-quad-third { width: 300px; padding: 10px; float: right; position: relative; }
+	#s_footer_disclaimer { clear: both; padding: 6px 12px 12px 12px; margin: 6px auto 0 auto; width: 960px; color: #234b6f; font-size: 0.8em; border-top: 1px dotted #223543; }
+        #s_footer_disclaimer a { color: #234b6f; text-decoration: none; }
+
+/* Orchard Vudu
+***************************************************************/
+.published { font-size: 0.9em; color: #666666; }
+
+/* Main
+***************************************************************/
+.latest-twitter-list { list-style: none; margin: 0; }
+.latest-twitter-list li { margin: 0 0 0 -2.6em; float: left; padding: 10px 0 10px 0; border-bottom: 1px dashed #234b6f; } /* b8c4d4 */
+.latest-twitter-timestamp { color: #4e7ba3; font-size: .85em; }
+
+.socialMediaIcon { padding: 8px; float: left; }
+.socialMediaIcon img { border: 0px; }
+
+/* Secondary
+***************************************************************/
+
+/* Forms
+***************************************************************/
+
+/* Misc
+***************************************************************/
