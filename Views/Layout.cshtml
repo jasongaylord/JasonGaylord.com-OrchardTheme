@@ -1,0 +1,50 @@
+﻿@{
+    // Add the CSS
+    Script.Require("ShapesBase");
+    Style.Include("http://fonts.googleapis.com/css?family=Rock+Salt:regular");
+    Style.Include("site.css");
+
+    // Determine which zones are going to be shown
+    var displayAsideSecond = (Model.AsideSecond != null);
+    
+    // Determine change of class if necessary (homepage)
+    var bodyCssClass = displayAsideSecond ? "s_body_column1" : "s_body_bigcolumn";
+    var bodyPageCssClass = displayAsideSecond ? "s_body_page" : "s_body_page_bigcolumn";
+    var bodyPageLeftCssClass = displayAsideSecond ? "s_body_page_left" : "s_body_page_bigcolumn_left";
+    var bodyPageRightCssClass = displayAsideSecond ? "s_body_page_right" : "s_body_page_bigcolumn_right";
+    
+    // Add user sign-in to footer
+    WorkContext.Layout.Footer.Add(New.User(), "10");
+}
+
+<div id="s_header">
+	<div id="s_header_container">
+        <div id="s_header_logo">
+            <a href="/orchard"><img src="/orchardv1/media/jasongaylord.png" alt="Jason N. Gaylord" style="border: 0px;" /></a>
+        </div>
+        <div id="s_navigation">
+            <a href="http://twitter.com/jgaylord" target="_blank"><img src="/orchardv1/media/twitter_icon.png" alt="Twitter :: jgaylord" id="twitter_icon" /></a>
+            @Display(Model.Navigation)
+        </div>
+	</div>
+</div>
+<div id="s_body">
+	<div id="s_body_container" >
+        @if (displayAsideSecond)
+        {
+		<div id="s_body_column2">
+			<div id="s_body_weather_stamp">@Display(Model.AsideFirst)</div>
+		</div>
+        }
+		<div id="@bodyCssClass">
+			<div id="@bodyPageLeftCssClass"></div>
+			<div id="@bodyPageRightCssClass"></div>
+			<div id="@bodyPageCssClass">@Display(Model.Content)</div>
+		</div>
+	</div>
+</div>
+<div id="s_footer">
+	<div id="s_footer_decor"></div>
+	<div id="s_footer_container">@Display(Model.FooterQuadThird) @Display(Model.FooterQuadFirst) @Display(Model.FooterQuadSecond)</div>
+    <div id="s_footer_disclaimer">@Display(Model.Footer)</div>
+</div>
