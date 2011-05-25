@@ -1,18 +1,19 @@
 ﻿@{
     // Add the CSS
     Script.Require("ShapesBase");
+    Script.Require("jQuery");
     Style.Include("http://fonts.googleapis.com/css?family=Rock+Salt:regular");
     Style.Include("site.css");
 
     // Determine which zones are going to be shown
     var displayAsideSecond = (Model.AsideSecond != null);
-    
+
     // Determine change of class if necessary (homepage)
     var bodyCssClass = displayAsideSecond ? "s_body_column1" : "s_body_bigcolumn";
     var bodyPageCssClass = displayAsideSecond ? "s_body_page" : "s_body_page_bigcolumn";
     var bodyPageLeftCssClass = displayAsideSecond ? "s_body_page_left" : "s_body_page_bigcolumn_left";
     var bodyPageRightCssClass = displayAsideSecond ? "s_body_page_right" : "s_body_page_bigcolumn_right";
-    
+
     // Add user sign-in to footer
     WorkContext.Layout.Footer.Add(New.User(), "10");
 }
