@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\img\jasongaylord.png" />
+    <Content Include="Content\img\twitter_icon.png" />
     <Content Include="Content\weathericons\0.png" />
     <Content Include="Content\weathericons\01.png" />
     <Content Include="Content\weathericons\02.png" />

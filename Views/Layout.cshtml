@@ -13,7 +13,10 @@
     var bodyPageCssClass = displayAsideSecond ? "s_body_page" : "s_body_page_bigcolumn";
     var bodyPageLeftCssClass = displayAsideSecond ? "s_body_page_left" : "s_body_page_bigcolumn_left";
     var bodyPageRightCssClass = displayAsideSecond ? "s_body_page_right" : "s_body_page_bigcolumn_right";
-
+    
+    // Get image path for images
+    var imgPath = Url.Content("~/Themes/JasonGaylord/Content/img/");
+    
     // Add user sign-in to footer
     WorkContext.Layout.Footer.Add(New.User(), "10");
 }
@@ -21,10 +24,10 @@
 <div id="s_header">
 	<div id="s_header_container">
         <div id="s_header_logo">
-            <a href="/orchard"><img src="/orchardv1/media/jasongaylord.png" alt="Jason N. Gaylord" style="border: 0px;" /></a>
+            <a href="/orchard"><img src="@(imgPath + "jasongaylord.png")" alt="Jason N. Gaylord" style="border: 0px;" /></a>
         </div>
         <div id="s_navigation">
-            <a href="http://twitter.com/jgaylord" target="_blank"><img src="/orchardv1/media/twitter_icon.png" alt="Twitter :: jgaylord" id="twitter_icon" /></a>
+            <a href="http://twitter.com/jgaylord" target="_blank"><img src="@(imgPath + "twitter_icon.png")" alt="Twitter :: jgaylord" id="twitter_icon" /></a>
             @Display(Model.Navigation)
         </div>
 	</div>
