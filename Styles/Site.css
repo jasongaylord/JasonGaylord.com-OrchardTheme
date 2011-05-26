@@ -94,7 +94,7 @@ dd          { margin-left: 1.5em;} */
 	        #s_body_page { background: #e2e9f1 url('img/s_body_page_gradient.gif') repeat-x; border: 1px #5e799b solid; width: 578px; min-height: 500px; padding: 10px; margin: 0 auto 0 auto; }
 	        #s_body_page_right { background: url('img/s_body_page_right.png') no-repeat; width: 10px; height: 170px; float: right; top: 0px; }
     	#s_body_column2 { width: 320px; float: right; }
-	        #s_body_weather_stamp { min-height: 200px; border: width: 300px; margin-left: 20px; }
+	        #s_body_weather_stamp { min-height: 200px; width: 320px; }
 	    #s_body_bigcolumn { padding: 20px 0 20px 0; }
 	        #s_body_page_bigcolumn_left { background: url('img/s_body_page_left.png') no-repeat; width: 10px; height: 170px; float: left; }
 	        #s_body_page_bigcolumn { background: #e2e9f1 url('img/s_body_page_gradient.gif') repeat-x; border: 1px #5e799b solid; width: 918px; min-height: 500px; padding: 10px; margin: 0 auto 0 auto; }
@@ -122,6 +122,11 @@ dd          { margin-left: 1.5em;} */
 
 .socialMediaIcon { padding: 8px; float: left; }
 .socialMediaIcon img { border: 0px; }
+
+.weatherBlock { width: 320px; height: 200px; font-size: 0.8em; position: relative; }
+.weatherSpot { width: 20px; height: 20px; border: 2px groove white; background-color: #dddddd; display: none; position: absolute; opacity: 0.7; -moz-opacity: 0.7; filter: alpha(opacity=70); }
+.weatherDetails { width: 145px; height: 75px; border: 2px groove white; background-color: #dddddd; opacity: 0.7; display: none; padding: 2px; position: absolute; }
+.weatherTemp { font-size: 1.2em; font-weight: bold; }
 
 /* Secondary
 ***************************************************************/

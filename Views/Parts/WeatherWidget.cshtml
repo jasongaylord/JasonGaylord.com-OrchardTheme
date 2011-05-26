@@ -1,5 +1,5 @@
 ﻿@{
-    // Script.Require("weatherDotCom");
+    Script.Include("weatherDotCom.js");
     var imgPath = "~/Themes/JasonGaylord/Content/weathericons/";
     var weathericon = "";
     if (File.Exists(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png"))
@@ -14,11 +14,11 @@
     weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
 }
 
-<div id="weatherBlock" style="background: url('@weathericon') no-repeat; width: 300px; height: 200px; font-family: 'Segoe UI'; font-size: 8.5pt; position: relative;">
-    <div id="weatherSpot" style="width: 20px; height: 20px; border: 2px groove white; background-color: #dddddd; opacity: 0.7; display: none; position: absolute; ">
+<div id="weatherBlock" class="weatherBlock" style="background: url('@weathericon') no-repeat;">
+    <div id="weatherSpot" class="weatherSpot">
     </div>
-    <div id="weatherDetails" style="width: 145px; height: 75px; border: 2px groove white; background-color: #dddddd; opacity: 0.7; display: none; padding: 2px; position: absolute; ">
-        <span style="font-size: 1.2em; font-weight: bold;">@Model.WeatherResults.CurrentConditions.Temperature&deg;F</span><br />
+    <div id="weatherDetails" class="weatherDetails">
+        <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.Temperature&deg;F</span><br />
         @Model.WeatherResults.CurrentConditions.Description<br />
         Feels Like: @Model.WeatherResults.CurrentConditions.FeelsLike&deg;<br />
         Wind: From @Model.WeatherResults.CurrentConditions.WindDirection at @Model.WeatherResults.CurrentConditions.WindSpeed mph
