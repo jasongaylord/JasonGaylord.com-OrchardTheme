@@ -1,15 +1,26 @@
-﻿@{
+﻿@using System.Web.Hosting
+@{
     Script.Include("weatherDotCom.js");
+   
     var imgPath = "~/Themes/JasonGaylord/Content/weathericons/";
     var weathericon = "";
-    if (File.Exists(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png"))
-    {
-        weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
-    }
-    else
-    {
-        weathericon = Url.Content(imgPath + "NotAvailable.gif");
-    }
+    //var virtualPathProvider = new VirtualPathProvider();
+       
+    //private bool IsPathVirtual(string virtualPath)
+    //{
+    //  String checkPath = VirtualPathUtility.ToAppRelative(virtualPath);
+    //  return checkPath.StartsWith("~/vrdir", StringComparison.InvariantCultureIgnoreCase);
+    //}
+
+    
+    //if (virtualPathProvider.FileExists(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png"))
+    //{
+    //    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
+    //}
+    //else
+    //{
+    //    weathericon = Url.Content(imgPath + "NotAvailable.gif");
+    //}
 
     weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
 }

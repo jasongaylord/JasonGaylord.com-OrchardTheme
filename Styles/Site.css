@@ -113,6 +113,13 @@ dd          { margin-left: 1.5em;} */
 /* Orchard Vudu
 ***************************************************************/
 .published { font-size: 0.9em; color: #666666; }
+.blog ul { list-style: none; margin: 0px; padding: 0px; }
+.blog-posts .content-items li { margin-bottom: 20px; }
+.tags a { background: url('img/tag_right.png') no-repeat right; color: #996633; text-decoration: none; padding: 3px 4px 3px 0px; margin-right: 5px; }
+.tags a span {background: url('img/tag_left.png') no-repeat; padding: 3px 0 3px 18px; font-size: 0.9em; font-weight: bold; }
+.rss { width: 16px; height: 16px; float: right; top: 0px; margin: 0; position: relative; background: 1px solid orange; }
+.rss img { border: 0px; }
+
 
 /* Main
 ***************************************************************/
