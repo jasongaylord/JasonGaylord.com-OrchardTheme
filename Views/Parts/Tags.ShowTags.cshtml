@@ -6,7 +6,7 @@
         //}
         //var linkText = "<span>" + t.TagName + "</span>";
         //tagsHtml.Add(Html.ActionLink((string)linkText, "Search", "Home", new { area = "Orchard.Tags", tagName = (string)t.TagName }, new { }));
-        tagsHtml.Add(new HtmlString("<a href=" + Url.Action("Search", "Home", new { area = "Orchard.Tags", tagName = (string)t.TagName }) + "><span>" + t.TagName + "</span></a>"));
+        tagsHtml.Add(new HtmlString("<a href=" + Url.Action("Search", "Home", new { area = "Orchard.Tags", tagName = (string)t.TagName }) + "><span class='tag-left'>"  + t.TagName +  "</span><span class='tag-right'></span></a>"));
     }
 }
 
