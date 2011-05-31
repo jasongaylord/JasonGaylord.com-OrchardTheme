@@ -10,6 +10,7 @@
     var email = Convert.ToString(TempData["CreateCommentContext.Email"]);
     var siteName = Convert.ToString(TempData["CreateCommentContext.SiteName"]);
 }
+<br />
 
 @if (Model.ContentPart.Comments.Count > 0) {
 <div id="comments">
@@ -37,15 +38,15 @@ using (Html.BeginForm("Create", "Comment", new { area = "Orchard.Comments" }, Fo
         <legend id="add-comment">@T("Add a Comment")</legend> 
     <ol>
         <li>
-            <label for="Name">@T("Name")</label>
+            <label for="Name">@T("Name")</label><br />
             <input id="Name" class="text" name="Name" type="text" value="@(contextExists ? name : String.Empty)" />
         </li>
         <li>
-            <label for="Email">@T("Email")</label>
+            <label for="Email">@T("Email")</label><br />
             <input id="Email" class="text" name="Email" type="text" value="@(contextExists ? email : String.Empty)"/>
         </li>
         <li>
-            <label for="SiteName">@T("Url")</label>
+            <label for="SiteName">@T("Url")</label><br />
             <input id="SiteName" class="text" name="SiteName" type="text" value="@(contextExists ? siteName : String.Empty)"/>
         </li>
      </ol>

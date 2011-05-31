@@ -13,7 +13,7 @@
       <Place Parts_Comments_Count="Content:7" />
     </Match>
     <Match DisplayType="Detail">
-      <Place Parts_Common_Metadata_Summary="Content:6" />
+      <Place Parts_Common_Metadata="Content:6" />
     </Match>
   </Match>
 </Placement>

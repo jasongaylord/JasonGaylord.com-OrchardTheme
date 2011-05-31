@@ -130,7 +130,9 @@
     <Content Include="Content\Web.config" />
     <Content Include="Theme.txt" />
     <Content Include="Theme.png" />
-    <Content Include="Placement.info" />
+    <Content Include="Placement.info">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Orchard.Core">
@@ -158,6 +160,7 @@
     <Content Include="Views\Parts\Feedburner.cshtml" />
     <Content Include="Views\Parts.Comments.Count-BlogPost.cshtml" />
     <Content Include="Views\Parts.Common.Body.Summary-BlogPost.cshtml" />
+    <Content Include="Views\Parts.Comments.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
