@@ -98,6 +98,7 @@ dd          { margin-left: 1.5em;} */
 	    #s_body_bigcolumn { padding: 20px 0 20px 0; }
 	        #s_body_page_bigcolumn_left { background: url('img/s_body_page_left.png') no-repeat; width: 10px; height: 170px; float: left; }
 	        #s_body_page_bigcolumn { background: #e2e9f1 url('img/s_body_page_gradient.gif') repeat-x; border: 1px #5e799b solid; width: 918px; min-height: 500px; padding: 10px; margin: 0 auto 0 auto; }
+	        #s_body_page_bigcolumn a img { border: 0px; }
 	        #s_body_page_bigcolumn_right { background: url('img/s_body_page_right.png') no-repeat; width: 10px; height: 170px; float: right; top: 0px; }	        
 	
 #s_footer { min-height: 120px; background: #021523; padding: 12px 0 0 0; clear: both; } /* 021523 */
