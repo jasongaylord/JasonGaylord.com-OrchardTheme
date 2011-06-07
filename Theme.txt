@@ -2,6 +2,6 @@ Name: Jason Gaylord Default Theme
 Author: Jason Gaylord
 Website: http://www.jasongaylord.com
 Description: My basic theme
-Version: 1.08
+Version: 1.09
 # todo: provide tags
 # Tags: Classic, Serif

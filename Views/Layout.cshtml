@@ -54,7 +54,18 @@
 		<div id="@bodyCssClass">
 			<div id="@bodyPageLeftCssClass"></div>
 			<div id="@bodyPageRightCssClass"></div>
-			<div id="@bodyPageCssClass">@Display(Model.Content)</div>
+			<div id="@bodyPageCssClass">
+                @Display(Model.Content)
+                @if (!displayAsideSecond)
+                {
+                <div style="width: 100%;">
+                    <div style="width:728px; height:100px; margin: 0 auto 0 auto;">
+                        <div class="lqm_ad" lqm_channel="1" lqm_publisher="90" lqm_zone="1" lqm_format="8"></div>
+                        <a href="http://lakequincy.com?90" style="text-align:right;font-size:8px;display:block;color:#000;text-decoration:none;font-family:Sans-Serif;margin:0;padding:0;">Ads by Lake Quincy Media</a>
+                    </div>
+                </div>
+                }
+            </div>
 		</div>
 	</div>
 </div>
@@ -63,12 +74,10 @@
 	<div id="s_footer_container">@Display(Model.FooterQuadThird) @Display(Model.FooterQuadFirst) @Display(Model.FooterQuadSecond)</div>
     <div id="s_footer_disclaimer">@Display(Model.Footer)</div>
 </div>
-@if (displayAsideSecond)
-{
-    <script type='text/javascript'>//<![CDATA[
-        if (typeof jQuery == 'undefined') {
-            document.write(unescape("%3Cscript src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js' type='text/javascript' %3E%3C/script%3E"));
-    }//]]></script>
-    <script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script>
-    <script type='text/javascript' language='Javascript'> if (jQuery.LqmAds) jQuery.LqmAds();</script>
-}
+
+<script type='text/javascript'>//<![CDATA[
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script>
+<script type='text/javascript' language='Javascript'> if (jQuery.LqmAds) jQuery.LqmAds();</script>
