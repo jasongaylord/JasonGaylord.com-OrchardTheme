@@ -23,6 +23,8 @@
     //}
 
     weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
+
+    var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
 }
 
 <div id="weatherBlock" class="weatherBlock" style="background: url('@weathericon') no-repeat;">
@@ -32,6 +34,6 @@
         <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.Temperature&deg;F</span><br />
         @Model.WeatherResults.CurrentConditions.Description<br />
         Feels Like: @Model.WeatherResults.CurrentConditions.FeelsLike&deg;<br />
-        Wind: From @Model.WeatherResults.CurrentConditions.WindDirection at @Model.WeatherResults.CurrentConditions.WindSpeed mph
+        Wind: @windLabel
     </div>
 </div>
