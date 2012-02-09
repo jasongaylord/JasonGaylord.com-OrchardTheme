@@ -1,6 +1,6 @@
 ﻿@using System.Web.Hosting
 @{
-    Script.Include("weatherDotCom.js");
+    Script.Include("weatherDotGov.js");
    
     var imgPath = "~/Themes/JasonGaylord/Content/weathericons/";
     var weathericon = "";
@@ -24,16 +24,17 @@
 
     weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
 
-    var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
+    //var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
 }
 
 <div id="weatherBlock" class="weatherBlock" style="background: url('@weathericon') no-repeat;">
     <div id="weatherSpot" class="weatherSpot">
     </div>
     <div id="weatherDetails" class="weatherDetails">
-        <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.Temperature&deg;F</span><br />
-        @Model.WeatherResults.CurrentConditions.Description<br />
-        Feels Like: @Model.WeatherResults.CurrentConditions.FeelsLike&deg;<br />
-        Wind: @windLabel
+        <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.temp_f&deg;F</span><br />
+        @Model.WeatherResults.CurrentConditions.weather<br />
+        Feels Like: @Model.WeatherResults.CurrentConditions.windchill_f&deg;F<br />
+        Wind: @Model.WeatherResults.CurrentConditions.wind_string<br/>
+        <span style="font-size: 0.8em; color: #999999;">As of @Model.WeatherResults.TimeCached UTC</span>
     </div>
 </div>
