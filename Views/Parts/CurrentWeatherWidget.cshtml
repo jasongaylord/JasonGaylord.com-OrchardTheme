@@ -22,7 +22,7 @@
     //    weathericon = Url.Content(imgPath + "NotAvailable.gif");
     //}
 
-    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
+    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.icon_url_name.Replace(".jpg",".png"));
 
     //var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
 }
@@ -33,8 +33,7 @@
     <div id="weatherDetails" class="weatherDetails">
         <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.temp_f&deg;F</span><br />
         @Model.WeatherResults.CurrentConditions.weather<br />
-        Feels Like: @Model.WeatherResults.CurrentConditions.windchill_f&deg;F<br />
         Wind: @Model.WeatherResults.CurrentConditions.wind_string<br/>
-        <span style="font-size: 0.8em; color: #999999;">As of @Model.WeatherResults.TimeCached UTC</span>
+        <span style="font-size: 0.8em; color: #333;">As of @Model.WeatherResults.TimeCached UTC</span>
     </div>
 </div>
