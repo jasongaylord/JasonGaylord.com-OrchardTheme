@@ -1,0 +1,39 @@
+﻿@using System.Web.Hosting
+@{
+    Script.Include("weatherDotCom.js");
+   
+    var imgPath = "~/Themes/JasonGaylord/Content/weathericons/";
+    var weathericon = "";
+    //var virtualPathProvider = new VirtualPathProvider();
+       
+    //private bool IsPathVirtual(string virtualPath)
+    //{
+    //  String checkPath = VirtualPathUtility.ToAppRelative(virtualPath);
+    //  return checkPath.StartsWith("~/vrdir", StringComparison.InvariantCultureIgnoreCase);
+    //}
+
+    
+    //if (virtualPathProvider.FileExists(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png"))
+    //{
+    //    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
+    //}
+    //else
+    //{
+    //    weathericon = Url.Content(imgPath + "NotAvailable.gif");
+    //}
+
+    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
+
+    var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
+}
+
+<div id="weatherBlock" class="weatherBlock" style="background: url('@weathericon') no-repeat;">
+    <div id="weatherSpot" class="weatherSpot">
+    </div>
+    <div id="weatherDetails" class="weatherDetails">
+        <span class="weatherTemp">@Model.WeatherResults.CurrentConditions.Temperature&deg;F</span><br />
+        @Model.WeatherResults.CurrentConditions.Description<br />
+        Feels Like: @Model.WeatherResults.CurrentConditions.FeelsLike&deg;<br />
+        Wind: @windLabel
+    </div>
+</div>

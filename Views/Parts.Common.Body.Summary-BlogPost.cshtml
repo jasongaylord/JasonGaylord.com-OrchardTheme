@@ -1,0 +1,6 @@
+﻿@{ 
+    Orchard.ContentManagement.ContentItem contentItem = Model.ContentPart.ContentItem;
+    string bodyHtml = Model.Html.ToString();
+    var body = new HtmlString(Html.Excerpt(bodyHtml, 200).ToString().Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>")); 
+}
+<p>@body <span class="blog-post-continuation">@Html.ItemDisplayLink(T("More").ToString(), contentItem)</span></p>

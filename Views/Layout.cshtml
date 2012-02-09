@@ -1,0 +1,83 @@
+﻿@{
+	// Add the CSS
+	Script.Require("ShapesBase");
+	Script.Require("jQuery");
+	Style.Include("http://fonts.googleapis.com/css?family=Rock+Salt:regular");
+	Style.Include("site.css");
+
+	// Determine which zones are going to be shown
+	var displayAsideSecond = (Model.AsideSecond != null);
+
+	// Determine change of class if necessary (homepage)
+	var bodyCssClass = displayAsideSecond ? "s_body_column1" : "s_body_bigcolumn";
+	var bodyPageCssClass = displayAsideSecond ? "s_body_page" : "s_body_page_bigcolumn";
+	var bodyPageLeftCssClass = displayAsideSecond ? "s_body_page_left" : "s_body_page_bigcolumn_left";
+	var bodyPageRightCssClass = displayAsideSecond ? "s_body_page_right" : "s_body_page_bigcolumn_right";
+	
+	// Get image path for images
+	var imgPath = Url.Content("~/Themes/JasonGaylord/Content/img/");
+	
+	// Add user sign-in to footer
+	WorkContext.Layout.Head.Add(New.RssLink());
+	WorkContext.Layout.Footer.Add(New.User(), "10");
+}
+
+<div id="s_header">
+	<div id="s_header_container">
+		<div id="s_header_logo">
+			<a href="/"><img src="@(imgPath + "jasongaylord.png")" alt="Jason N. Gaylord" style="border: 0px;" /></a>
+		</div>
+		<div id="s_navigation">
+			<a href="http://twitter.com/jgaylord" target="_blank"><img src="@(imgPath + "twitter_icon.png")" alt="Twitter :: jgaylord" id="twitter_icon" /></a>
+			@Display(Model.Navigation)
+		</div>
+	</div>
+</div>
+<div id="s_body">
+	<div id="s_body_container" >
+		@if (displayAsideSecond)
+		{
+		<div id="s_body_column2">
+			<div id="s_body_weather_stamp">@Display(Model.AsideSecond)</div>
+			<div style="margin: 50px 0 20px 0; text-align: center;">
+				<div style="width:300px; height:260px;">
+					<div class="lqm_ad" lqm_publisher="lqm.jasongaylord.site" lqm_zone="RON" lqm_format="300x250"></div>
+					<a href="http://lakequincy.com?90" style="text-align:right;font-size:8px;display:block;color:#000;text-decoration:none;font-family:Sans-Serif;margin:0;padding:0;">Ads by Lake Quincy Media</a>
+				</div><br />
+				<div style="width:300px; height:260px;">
+					<div class="lqm_ad" lqm_publisher="lqm.jasongaylord.site" lqm_zone="RON" lqm_format="300x250"></div>
+					<a href="http://lakequincy.com?90" style="text-align:right;font-size:8px;display:block;color:#000;text-decoration:none;font-family:Sans-Serif;margin:0;padding:0;">Ads by Lake Quincy Media</a>
+				</div>
+			</div>
+		</div>
+		}
+		<div id="@bodyCssClass">
+			<div id="@bodyPageLeftCssClass"></div>
+			<div id="@bodyPageRightCssClass"></div>
+			<div id="@bodyPageCssClass">
+				@Display(Model.Content)
+				@if (!displayAsideSecond)
+				{
+				<div style="width: 100%;">
+					<div style="width:728px; height:100px; margin: 0 auto 0 auto;">
+						<div class="lqm_ad" lqm_publisher="lqm.jasongaylord.site" lqm_zone="RON" lqm_format="728x90"></div>
+						<a href="http://lakequincy.com?90" style="text-align:right;font-size:8px;display:block;color:#000;text-decoration:none;font-family:Sans-Serif;margin:0;padding:0;">Ads by Lake Quincy Media</a>
+					</div>
+				</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="s_footer">
+	<div id="s_footer_decor"></div>
+	<div id="s_footer_container">@Display(Model.FooterQuadThird) @Display(Model.FooterQuadFirst) @Display(Model.FooterQuadSecond)</div>
+	<div id="s_footer_disclaimer">@Display(Model.Footer)</div>
+</div>
+
+<script type='text/javascript'>//<![CDATA[
+	if (typeof jQuery == 'undefined') {
+		document.write(unescape("%3Cscript src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script>
+@*<script type='text/javascript' language='Javascript'> if (jQuery.LqmAds) jQuery.LqmAds();</script>*@
