@@ -1,18 +1,18 @@
 ﻿@using System.Web.Hosting
 @{
     Script.Include("weatherDotGov.js");
-   
+
     var imgPath = "~/Themes/JasonGaylord/Content/weathericons/";
     var weathericon = "";
     //var virtualPathProvider = new VirtualPathProvider();
-       
+
     //private bool IsPathVirtual(string virtualPath)
     //{
     //  String checkPath = VirtualPathUtility.ToAppRelative(virtualPath);
     //  return checkPath.StartsWith("~/vrdir", StringComparison.InvariantCultureIgnoreCase);
     //}
 
-    
+
     //if (virtualPathProvider.FileExists(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png"))
     //{
     //    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.DescriptionIconNumber + ".png");
@@ -22,7 +22,13 @@
     //    weathericon = Url.Content(imgPath + "NotAvailable.gif");
     //}
 
-    weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.icon_url_name.Replace(".jpg",".png"));
+    if (Model.WeatherResults != null) { 
+        if (Model.WeatherResults.CurrentConditions != null) {
+            if (Model.WeatherResults.CurrentConditions.icon_url_name != null) {
+                weathericon = Url.Content(imgPath + Model.WeatherResults.CurrentConditions.icon_url_name.Replace(".jpg", ".png"));
+            }
+        }
+    }
 
     //var windLabel = (@Model.WeatherResults.CurrentConditions.WindDirection.ToLower() == "calm") ? "Calm" : "From " + Model.WeatherResults.CurrentConditions.WindDirection + " at " + Model.WeatherResults.CurrentConditions.WindSpeed + "mph";
 }
