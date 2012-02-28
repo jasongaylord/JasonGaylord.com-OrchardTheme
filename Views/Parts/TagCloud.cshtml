@@ -1,0 +1,7 @@
+﻿@using Vandelay.Industries.Models
+<p class="tag-cloud">
+    @foreach (TagCount t in Model.TagCounts) {
+        <div class="tag-spacer"><a href="@Url.Action("Search", "Home", new {area = "Orchard.Tags", tagName = (string) t.TagName})"><span class='tag-left'>@t.TagName</span><span class='tag-right'></span></a></div>
+    }
+</p>
+<div class="tag-wrapup"></div>
